@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-width: 100vw;
+    margin: 0 auto;
+    font-family: 'Creepster', cursive;
+    color: hsl(0, 9%, 4%);
+}
