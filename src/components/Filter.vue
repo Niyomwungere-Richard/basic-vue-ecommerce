@@ -65,7 +65,6 @@ export default {
     },
     methods: {
         emitFilters() {
-            // On émet l'événement 'filter-change' attendu par le parent
             this.$emit('filter-change', {
                 brands: this.selectedBrands,
                 priceRanges: this.selectedPriceRanges

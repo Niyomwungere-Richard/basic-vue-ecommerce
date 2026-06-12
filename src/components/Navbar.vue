@@ -29,8 +29,6 @@ import { useCartStore } from '../stores/cartStore';
 
 export default {
     name: 'Navbar',
-    
-    // 1. Il faut déclarer les composants pour qu'ils soient utilisables dans le template
     components: {
         Search,
         ShoppingCart,
@@ -38,23 +36,21 @@ export default {
         User
     },
     
-    // 2. Il faut déclarer les événements que le composant peut émettre
     emits: ['search'],
 
-    // 3. La fonction setup est le cœur de cette syntaxe
     setup(props, { emit }) {
-        // Initialisation des hooks et stores
+       
         const router = useRouter();
         const cartStore = useCartStore();
 
-        // Déclaration des variables réactives
+       
         const isLoggedIn = ref(false);
         const textSearch = ref('');
         const openMenu = ref(false);
 
-        // Déclaration des fonctions
+       
         function onSearch() {
-            emit('search', textSearch.value); // 'emit' est récupéré depuis le second paramètre de setup()
+            emit('search', textSearch.value); 
         }
 
         function toggleMenu() {
@@ -71,7 +67,7 @@ export default {
             onSearch,
             toggleMenu,
             goToCart,
-            cartStore // facultatif ici, mais utile si vous utilisez le store dans le template
+            cartStore 
         };
     }
 }
