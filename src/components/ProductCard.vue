@@ -1,13 +1,14 @@
+
 <template>
   <div class="product-card">
     <div class="product-image">
-      <img :src="items.image" :alt="items.name" class="image" />
+      <img :src="item.image" :alt="item.name" class="image" />
     </div>
 
     <div class="product-info">
-      <h3 class="product-name">{{ items.name }}</h3>
+      <h3 class="product-name">{{ item.name }}</h3>
       <p class="product-price">
-        Price <span>{{ items.price.toLocaleString() }} Fbu</span>
+        Price <span>{{ item.price.toLocaleString() }} Fbu</span>
       </p>
 
       <div class="product-actions">
@@ -30,27 +31,24 @@ export default {
     ShoppingCart
   },
   props: {
-    items: {
+    item: {
       type: Object,
       required: true
     }
   },
   setup() {
-
+    // Avec l'Options API, on instancie le store ici et on le retourne
     const cartStore = useCartStore();
     return { cartStore };
   },
   methods: {
     acheter() {
-
-      this.$router.push(`/product/${this.items.id}`);
+      this.$router.push(`/product/${this.item.id}`);
     },
     ajouterPanier() {
-
-      console.log('Ajouter au panier :', this.items.name);
-
-
-      this.cartStore.addToCart(this.items);
+      console.log('Ajouter au panier :', this.item.name);
+      // Utilisation via this.cartStore
+      this.cartStore.addToCart(this.item);
     }
   }
 }
@@ -75,7 +73,6 @@ export default {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: center;
 }
 
 .product-info {
@@ -105,7 +102,6 @@ export default {
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .btn-buy:hover {
@@ -117,7 +113,6 @@ export default {
   border: none;
   color: #007bff;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .btn-cart:hover {

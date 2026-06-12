@@ -4,7 +4,7 @@
         <Filter @filter-change="onFilterChange" />
 
         <div class="cards-container">
-            <ProductCard v-for="value in filteredProducts" :key="value.id" :items="value" />
+            <ProductCard v-for="value in filteredProducts" :key="value.id" :item="value" />
         </div>
     </div>
 </template>
