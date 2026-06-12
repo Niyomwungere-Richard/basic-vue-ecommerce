@@ -1,14 +1,13 @@
-
 <template>
   <div class="product-card">
     <div class="product-image">
-      <img :src="item.image" :alt="item.name" class="image" />
+      <img :src="items.image" :alt="items.name" class="image" />
     </div>
 
     <div class="product-info">
-      <h3 class="product-name">{{ item.name }}</h3>
+      <h3 class="product-name">{{ items.name }}</h3>
       <p class="product-price">
-        Price <span>{{ item.price.toLocaleString() }} Fbu</span>
+        Price <span>{{ items.price.toLocaleString() }} Fbu</span>
       </p>
 
       <div class="product-actions">
@@ -31,30 +30,30 @@ export default {
     ShoppingCart
   },
   props: {
-    item: {
+    items: {
       type: Object,
       required: true
     }
   },
   setup() {
-    // Avec l'Options API, on instancie le store ici et on le retourne
     const cartStore = useCartStore();
     return { cartStore };
   },
   methods: {
     acheter() {
-      this.$router.push(`/product/${this.item.id}`);
+      this.$router.push(`/product/${this.items.id}`);
     },
     ajouterPanier() {
-      console.log('Ajouter au panier :', this.item.name);
-      // Utilisation via this.cartStore
-      this.cartStore.addToCart(this.item);
+      console.log('Ajouter au panier :', this.items.name);
+      // On envoie l'objet entier (this.items) à votre store Pinia
+      this.cartStore.addToCart(this.items);
     }
   }
 }
 </script>
 
 <style scoped>
+/* Vos styles CSS de la carte produit restent ici */
 .product-card {
   display: flex;
   flex-direction: column;

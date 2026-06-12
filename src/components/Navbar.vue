@@ -83,7 +83,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background-color: hsla(229, 65%, 39%, 0.781);
+      background-color: #f3f3f3;
     height: 10vh;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -125,6 +125,11 @@ export default {
 .flèche {
     color: white; 
     margin-left: 0.5rem;
+}
+.hero-title {
+    position: relative !important;
+    left: 0 !important;
+    width: 100% !important;
 }
 
 </style>

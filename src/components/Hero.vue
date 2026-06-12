@@ -52,7 +52,7 @@ export default {
     left: 5%;
     width: 100%;
     padding: 1rem 0;
-    font-family: 'Nosifer', sans-serif;
+    font-family: 'Creepster', cursive;
     text-transform: uppercase;
     color: #ffffff;
 }
@@ -61,7 +61,7 @@ export default {
     font-size: 2.5rem;
     color: rgb(255, 255, 255);
     margin-bottom: 1rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Creepster', cursive;
 }
 
 .paragraphe {
@@ -71,9 +71,7 @@ export default {
     max-width: 600px;
     margin-bottom: 2rem;
     position: absolute;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+
 }
 
 img {
