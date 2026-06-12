@@ -70,8 +70,8 @@ export default {
     return { cartStore };
   },
   methods: {
-    augmenterQuantite(item) {
-      this.cartStore.addToCart(item);
+    augmenterQuantite(items) {
+      this.cartStore.addToCart(items);
     },
     diminuerQuantite(productId) {
       this.cartStore.removeFromCart(productId);
@@ -96,6 +96,7 @@ export default {
   padding: 0 20px;
   font-family: 'Arial', sans-serif;
   color: #333;
+  max-width: 100%;
 }
 
 .cart-header {

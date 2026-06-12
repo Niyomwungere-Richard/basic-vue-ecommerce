@@ -5,9 +5,11 @@ import ProductsPage from "./views/ProductsPage.vue";
 const routes = [
     // { path: '', component: ... },
 
-    { path: '/', name: 'homepage',  component: ProductsPage },
+    { path: '/', name: 'homepage', component: ProductsPage },
     { path: '/cart', name: 'CartPage', component: CartPage },
-    
+    {
+        path: '/product/:id',name: 'product-detail',component: ProductsPage}
+
 ]
 
 const router = createRouter({

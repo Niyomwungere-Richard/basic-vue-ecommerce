@@ -135,9 +135,9 @@ export default {
 .nom {
     font-size: 1.5rem;
     font-weight: bold;
-     font-family: 'Creepster', cursive;
-     color: #333;
-     margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
 }
 .utilisateur {
     color: white;
