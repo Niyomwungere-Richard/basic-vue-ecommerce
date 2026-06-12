@@ -13,7 +13,7 @@
       <div class="product-actions">
         <button class="btn-buy" @click="acheter">Acheter Maintenant</button>
         <button class="btn-cart" @click="ajouterPanier">
-          <ShoppingCart :size="17" />
+          <ShoppingCart :size="17"/>
         </button>
       </div>
     </div>
@@ -45,7 +45,6 @@ export default {
     },
     ajouterPanier() {
       console.log('Ajouter au panier :', this.items.name);
-      // On envoie l'objet entier (this.items) à votre store Pinia
       this.cartStore.addToCart(this.items);
     }
   }
@@ -53,7 +52,6 @@ export default {
 </script>
 
 <style scoped>
-/* Vos styles CSS de la carte produit restent ici */
 .product-card {
   display: flex;
   flex-direction: column;
