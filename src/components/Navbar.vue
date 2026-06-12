@@ -8,9 +8,10 @@
         </div>
 
         <div class="actions">
-            <span @click="goToCart" class="clickable-icon">
+            <div @click="goToCart" class="clickable-icon">
                 <ShoppingCart />
-            </span>
+                <span class="cart-count">{{ cartStore.cartCount }}</span>
+            </div>
 
             <div @click="toggleMenu" class="clickable-icon">
                 <User class="utilisateur"/>
@@ -118,6 +119,25 @@ export default {
     align-items: center;
     margin-left: 1.5rem;
     cursor: pointer;
+    position: relative;
+}
+.cart-count {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 5px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+.nom {
+    font-size: 1.5rem;
+    font-weight: bold;
+     font-family: 'Creepster', cursive;
+     color: #333;
+     margin: 0;
 }
 .utilisateur {
     color: white;
@@ -125,11 +145,6 @@ export default {
 .flèche {
     color: white; 
     margin-left: 0.5rem;
-}
-.hero-title {
-    position: relative !important;
-    left: 0 !important;
-    width: 100% !important;
 }
 
 </style>
