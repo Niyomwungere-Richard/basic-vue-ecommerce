@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .filters {
     width: 250px;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #f5f5f5;
     border-radius: 8px;
 }

@@ -75,13 +75,13 @@ const socials = ref({
 <style scoped>
 /* Le CSS est scoped pour ne pas impacter le reste du site */
 .site-footer {
-  background-color: #f3f3f3;
+  background-color: #C4C4C4;
   color: #333;
   padding: 40px 20px 20px 20px;
   font-family: 'Arial', sans-serif;
   border-radius: 20px 20px 0 0;
   max-width: 1200px;
-  margin: 40px auto 0 auto;
+  margin: 40px 20px 0 20px;
 }
 
 .footer-container {

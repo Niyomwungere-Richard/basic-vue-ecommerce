@@ -12,11 +12,16 @@
 <script>
 import Filter from '@/components/Filter.vue';
 import ProductCard from '@/components/ProductCard.vue';
+import { useCartStore } from '@/stores/cartStore';
 
 export default {
     components: {
         Filter,
         ProductCard
+    },
+    setup(){
+        const store = useCartStore()
+        return { store }
     },
     data() {
         return {
@@ -57,6 +62,9 @@ export default {
                 });
             }
 
+            const localKeyword = this.store.keyword.toLowerCase()
+            list = list.filter((product)=> (product.name).toLowerCase().includes(localKeyword));
+
             return list;
         }
     },
@@ -73,6 +81,7 @@ export default {
 .products-container {
     display: flex;
     gap: 30px;
+    padding: 0 20px;
 }
 
 .cards-container {

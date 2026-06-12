@@ -4,6 +4,9 @@ import { ref, computed } from 'vue';
 export const useCartStore = defineStore('cart', () => {
     // 1. Le "State" (Les données du panier)
     const items = ref([]);
+    const keyword = ref('');
+
+    
 
     const cartCount = computed(() => {
         return items.value.reduce((total, items) => total + items.quantity, 0);
@@ -37,6 +40,10 @@ export const useCartStore = defineStore('cart', () => {
         }
     }
 
+    function setKeyWOrd(word) {
+        keyword.value = word
+    }
+
     // Vider le panier
     function clearCart() {
         items.value = [];
@@ -44,10 +51,12 @@ export const useCartStore = defineStore('cart', () => {
 
     return {
         items,
+        keyword,
         cartCount,
         totalPrice,
         addToCart,
         removeFromCart,
-        clearCart
+        clearCart,
+        setKeyWOrd
     };
 });

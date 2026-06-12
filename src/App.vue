@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <Navbar />
     <Hero v-if="$route.name === 'homepage'" /> <!-- v-if -->
 
@@ -29,3 +29,10 @@ export default {
   
 }
 </script>
+
+<style>
+.app-container {
+  position: relative;
+  
+}
+</style>

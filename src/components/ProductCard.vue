@@ -41,7 +41,9 @@ export default {
   },
   methods: {
     acheter() {
-      this.$router.push(`/product/${this.items.id}`);
+      this.cartStore.clearCart();
+      this.cartStore.addToCart(this.items);
+      this.$router.push(`/cart`);
     },
     ajouterPanier() {
       console.log('Ajouter au panier :', this.items.name);
